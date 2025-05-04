@@ -62,7 +62,7 @@
  /* Full-viewport home section with a black background */
  .home {
   min-height: 100vh;
-  background-color:transparent;
+  background-color: #000;
   padding-top: 80px; /* Clears fixed navbar if you have one */
 }
 
@@ -117,16 +117,18 @@
 }
 
 @media (max-width: 576px) {
-
-  /* for home */
   #home {
     height: auto; /* Prevents content from getting cut off */
     padding-top: 50px; /* Adjust spacing */
   }
 
-  #home h1,h2 {
+  #home h1 {
     font-size: 22px; /* Scales heading for mobile */
     text-align: center; /* Centers text for better readability */
+  }
+
+  #home h2 {
+    font-size: 16px; /* Adjusts subtitle for small screens */
   }
 
   .social-icons {
@@ -142,15 +144,6 @@
   .btn {
     padding: 8px 16px;
     font-size: 14px;
-    width: 150px
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Space between buttons */
   }
 
   .portrait-circle,
@@ -158,87 +151,14 @@
     width: 200px;
     height: 200px;
     margin: 0 auto; /* Centers the image */
-    padding-top: 30px; /* Adds space above the image */
-  }
-
-   /* for about */
-   #about .profile-img {
-    width: 250px;
-    height: 250px;
-    margin-top: -30px;
-    margin-left: 40px;
-    margin-bottom: 20px; /* Adds space below the image */
-  }
-
-   #about .about-text {
-    width: 90%;
-    font-size: 15px; /* Reduce font size */
-    line-height: 1.6; /* Adjust spacing */
-    padding: 15px; /* Reduce padding */
-    margin-left: 20px;
-    margin-top: 10px; /* Adjust spacing above */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  #education .card {
-  width: 100%; /* Makes the cards take up the full width */
-  max-width: 400px; /* Prevents it from getting too big */
-  padding: 15px; /* Adds more space inside the card */
-}
-
-#education .card-header h3 {
-  font-size: 1.4rem; /* Reduces title size */
-}
-
-#education .card-header img {
-  margin-left: -10px;
-  width: 60px; /* Slightly smaller */
-
-}
-
-#skills .skill-icon {
-    left: 0px; /* Moves icon further left */
-  }
-
-  #project .card {
-  max-width: 300px; /* Sets a smaller max width */
-  padding: 15px; /* Adds internal spacing */
-  margin: 15px auto; /* Adds space between cards */
-}
-
-#project .row {
-  gap: 20px; /* Adds space between columns */
-  justify-content: center; /* Centers cards in row */
-}
-
-#project .project-img {
-    width: 100%; /* Ensures the image fills the card */
-    height: 140px; /* Reduces image height */
-  }
-
-  .form-container {
-    width: 90%; /* Keeps form contained */
-    padding: 20px; /* Reduces padding */
-    margin: auto; /* Centers the form */
-  }
-
-  .form-control {
-    font-size: 14px; /* Adjusts input text size for mobile */
-    padding: 8px; /* Makes inputs more compact */
-  }
-
-  .btn-custom {
-    width: 100%; /* Full-width button */
-    padding: 12px; /* Makes button easier to tap */
+    padding-top: 20px; /* Adds space above the image */
   }
 
 }
 
 
 #about {
-  background: url('images/textured_bg.avif') no-repeat center center fixed;
+  background: url('https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg') no-repeat center center fixed;
   background-size: cover;
   filter: contrast(1.1) brightness(0.9);
     color: white;
@@ -267,7 +187,6 @@
     margin-top: 20px; /* Adds spacing above the paragraph */
     letter-spacing: 1px; /* Adds spacing between letters */
     border: 1px solid #ffc107; 
-    text-align: center;
 }
 
 #education .card-body {
@@ -405,10 +324,10 @@
 
 /* Project Section */
 #project {
-  background: url('images/textured_bg.avif') no-repeat center center fixed;
+  background: url('https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 /* Container Margin */
@@ -419,7 +338,7 @@
 
 /* Image Styling */
 .project-img {
-  height: 200px; /* Ensures uniform image height */
+  height: 220px; /* Ensures uniform image height */
   object-fit: cover; /* Prevents distortion while covering area */
   border-bottom: 2px solid #FFC107; /* Yellow border below image */
 }
@@ -429,7 +348,6 @@
   border: 2px solid #FFC107; /* Yellow border */
   background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
   transition: 0.3s ease-in-out; /* Smooth transition */
-  padding: 15px; /* Adds internal spacing */
 }
 
 /* Hover Effect */
@@ -464,76 +382,57 @@
   line-height: 1.6; /* Improves spacing */
 }
 
-#contact {
-  background: url('images/textured_bg.avif') no-repeat center center fixed;
-  background-size: cover;
-}
   /* Form Container */
   .form-container {
-    background: url('images/navy_bg.avif') no-repeat center center fixed;
-    background-size: cover;
+      background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
       padding: 40px; /* Inner spacing around the form */
       border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow for depth */
     }
 
-   /* Input Fields */
-.form-control {
-  background-color: transparent; /* Keeps background clean */
-  color: white; /* Light text inside the input */
-  border: 2px solid #1e3a8a; /* Deep blue border */
-  border-radius: 5px; /* Rounded edges for input fields */
-}
+    /* Input Fields */
+    .form-control {
+      background-color: transparent; /* Transparent input background */
+      color: #fff; /* Light text inside the input */
+      border: 2px solid pink; /* Pink borders */
+      border-radius: 5px; /* Rounded edges for input fields */
+    }
 
-/* Focus Styling for Inputs */
-.form-control:focus {
-  background-color: transparent; /* Maintains transparency on focus */
-  color: white; /* Ensures readability */
-  border-color: #FFC107; /* Gold border when focused */
-}
+    /* Focus Styling for Inputs */
+    .form-control:focus {
+      background-color: transparent; /* Maintains transparency on focus */
+      color: #fff; /* Keeps text readable */
+      border-color: #ff69b4; /* Bright pink border */
+      box-shadow: none; /* Removes default glow */
+    }
 
-/* Labels */
-.form-label {
-  color: #FFC107; /* White labels for visibility */
-}
+    /* Labels */
+    .form-label {
+      color: #fff; /* White labels for visibility */
+    }
 
-.form-control::placeholder {
-  color: white; /* Gold placeholder text */
-  opacity: 1; /* Ensures it's fully visible */
-}
+    /* Submit Button */
+    .btn-custom {
+      background-color: pink; /* Pink button background */
+      color: #000; /* Black button text */
+      border: none; /* Removes borders */
+      padding: 10px 20px; /* Adds space around the text */
+      border-radius: 5px; /* Rounded corners for the button */
+      font-weight: bold; /* Bold text for emphasis */
+    }
 
-/* Submit Button */
-.btn-custom {
-  background-color: transparent; /* Gold button */
-  color: #ffc107; /* Black text for contrast */
-  border: none; /* Removes borders */
-  padding: 10px 20px; /* Adds space around text */
-  border-radius: 5px; /* Rounded corners */
-  font-weight: bold; /* Bold text for emphasis */
-  border: 2px solid #1e3a8a; /* Deep blue border */
-}
-
-/* Hover Effect for Button */
-.btn-custom:hover {
-  background-color: #1e3a8a; /* Deep blue on hover */
-  color: white; /* White text for contrast */
-}
-
-footer {
-  background: url('images/navy_bg.avif') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  border-bottom: 3px solid #041d31;
-  font-weight:bold;
-  line-height: 0.5;
-}
+    /* Hover Effect for Button */
+    .btn-custom:hover {
+      background-color: #ff69b4; /* Bright pink hover effect */
+      color: #fff; /* White text on hover */
+    }
 
 
 
     </style>
 
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbarSupportedContent" data-bs-offset="50">
+  <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50">
     <nav class="navbar navbar-expand-lg bg-black navbar-dark bg-transparent fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -682,6 +581,7 @@ footer {
 <section id="skills">
   <div class="container">
 
+
     <div class="row">
       <!-- Left Column for Soft Skills -->
       <div class="col-md-6">
@@ -829,59 +729,46 @@ footer {
 
 
 
-<section id="contact">
-  <div class="container py-5">
-      <h1 class="text-center text-white fw-bold mb-5">CONTACT ME</h1>
+  <section id="contact">
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Contact Me</h1>
       <div class="row justify-content-center">
-          <div class="col-md-6 form-container">
-              <form>
-                  <div class="row">
-                      <!-- Full Name -->
-                      <div class="col-md-6 mb-3">
-                          <label for="name" class="form-label">Full Name</label>
-                          <input type="text" id="name" class="form-control" placeholder="Enter your full name">
-                      </div>
-
-                      <!-- Email -->
-                      <div class="col-md-6 mb-3">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" id="email" class="form-control" placeholder="Enter your email">
-                      </div>
-                  </div>
-
-                  <div class="row">
-                      <!-- Phone Number -->
-                      <div class="col-md-6 mb-3">
-                          <label for="phone" class="form-label">Phone Number</label>
-                          <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
-                      </div>
-
-                      <!-- Subject -->
-                      <div class="col-md-6 mb-3">
-                          <label for="subject" class="form-label">Subject</label>
-                          <input type="text" id="subject" class="form-control" placeholder="Enter subject">
-                      </div>
-                  </div>
-
-                  <!-- Message -->
-                  <div class="mb-3">
-                      <label for="message" class="form-label">Message</label>
-                      <textarea id="message" class="form-control" rows="4" placeholder="Write your message"></textarea>
-                  </div>
-
-                  <!-- Submit Button -->
-                  <div class="text-center">
-                      <button type="submit" class="btn btn-custom">Send Message</button>
-                  </div>
-              </form>
-          </div>
+        <div class="col-md-6 form-container">
+          <form>
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <!-- Phone Number -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+            </div>
+            <!-- Subject -->
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="Enter subject">
+            </div>
+            <!-- Message -->
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-control" rows="4" placeholder="Write your message"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-custom">Send Message</button>
+            </div>
+          </form>
+        </div>
       </div>
-  </div>
-</section>
-
-  <footer class="text-center text-white py-4">
-    <i> © Denmark Isana Guce | All Rights Reserved</i>
-  </footer>
+    </div>
+  </section>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
