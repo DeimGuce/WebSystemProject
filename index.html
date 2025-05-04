@@ -6,531 +6,501 @@
     <title>Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        font-family: Poppins, sans-serif;
-      }
 
-  
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Poppins, sans-serif;
+    }
+
+    /* Navigation */
     .navbar {
-    background: url('https://img.freepik.com/free-photo/solid-navy-blue-concrete-textured-wall_53876-124584.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
-    background-size: cover;
-    border-bottom: 3px solid #041d31; /* Adds a yellow 3px border */
+      background: url('https://img.freepik.com/free-photo/solid-navy-blue-concrete-textured-wall_53876-124584.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
+      background-size: cover;
+      border-bottom: 3px solid #041d31; /* Adds a yellow 3px border */
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center; /* Aligns logo and text vertically */
+      line-height: 1; /* Ensures text and logo don't overlap */
+      font-size: 1.5rem; /* Adjusts the font size of the brand text */
+       font-weight: bold; /* Makes the brand text bold */
+      color:#ffc107;
+    }
+
+    .navbar-nav {
+       display: flex;
+      align-items: center; /* Vertically aligns menu items */
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      margin-left: 15px; /* Adds spacing between menu items */
+      margin-top: 5px; /* Lowers the menu text slightly */
+    }
+
+    .nav-link.active {
+      color: #ffffff !important; /* Highlight active link in gold */
+      font-weight: bold; /* Make the active link bold */
+      border-bottom: 2px solid #ffc107; /* Optional: Add an underline */
+    }
+
+    /* Home */
+    #home {
+      background: url('images/navy_bg.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 0px;
+    }
+ 
+    .home {
+      min-height: 100vh;
+      background-color:transparent;
+      padding-top: 80px; /* Clears fixed navbar if you have one */
+    }
+
+    #home .btn {
+      margin-top: 20px; /* Adds space between the buttons and the text above */
+    }
+
+    .portrait-circle {
+      width: 350px;
+      height: 350px;
+      background-color: rgba(0, 0, 0, 0.05); /* Transparent effect */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portrait-img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover; /* Ensures the image covers the circle */
+      border-radius: 50%; /* Makes it circular */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px; /* Space between icons */
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      transition: transform 0.3s ease;
+      border: 3px solid white; /* Gold border */
+    }
+
+    .social-icon:hover {
+      background-color: #ffc107; /* Change color on hover */
+      transform: scale(1.1);
+    }
+
+    /* About */
+    #about {
+      background: url('images/textured_bg.avif') no-repeat center center fixed;
+      background-size: cover;
+      filter: contrast(1.1) brightness(0.9);
+      color: white;
+      padding: 100px 0;
+      border-bottom: 2px solid #ffc107;
+    }
+
+    .profile-img {
+      width: 400px; /* Adjusts the width */
+      height: 400px; /* Adjusts the height */
+      object-fit: cover; /* Ensures the image fits within the specified dimensions */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      margin-right: 50px
     }
 
 
-  .navbar-brand {
-  display: flex;
-  align-items: center; /* Aligns logo and text vertically */
-  line-height: 1; /* Ensures text and logo don't overlap */
-  font-size: 1.5rem; /* Adjusts the font size of the brand text */
-  font-weight: bold; /* Makes the brand text bold */
-  color:#ffc107;
-}
+    .about-text {
+      font-weight: bold;
+      font-size: 22px; /* Adjust font size for readability */
+      line-height: 2.2; /* Improves spacing between lines */
+      color: #FFC107; /* White text for contrast */
+      padding: 20px; /* Adds inner spacing around the text */
+      border-radius: 10px; /* Softens edges of the text block */
+      text-align: justify; /* Justifies text for neat alignment */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow effect */
+      margin-top: 20px; /* Adds spacing above the paragraph */
+      letter-spacing: 1px; /* Adds spacing between letters */
+      border: 1px solid #ffc107; 
+      text-align: center;
+    }
 
-.navbar-nav {
-  display: flex;
-  align-items: center; /* Vertically aligns menu items */
-  font-size: 1.5rem;
-}
+    /* Education */
+    #education{
+      background: url('images/navy_bg.avif') no-repeat center center fixed;
+      background-size: cover;
+      padding: 50px;
+      border-bottom: 2px solid #041d31;
+    }
 
-.nav-link {
-  margin-left: 15px; /* Adds spacing between menu items */
-  margin-top: 5px; /* Lowers the menu text slightly */
-}
+    #education .card-body {
+      display: block; /* Resets flex styling */
+      align-items: unset; /* Removes vertical alignment */
+    }
 
-.nav-link.active {
-  color: #ffffff !important; /* Highlight active link in gold */
-  font-weight: bold; /* Make the active link bold */
-  border-bottom: 2px solid #ffc107; /* Optional: Add an underline */
-}
+    #education .card-body img {
+      width: 100px; /* Keeps the logo styling consistent */
+      height: 100px;
+      margin-bottom: 20px; /* Adds spacing beneath the logo */
+    }
 
-#home {
-    background: url('images/navy_bg.avif') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 0px;
-  }
+    #education .card {
+      background: url('images/navy_bg.avif') no-repeat center center; /* Same background as the section */
+      background-size: cover; /* Ensures the image covers the card */
+      border: 2px solid #ffc107; /* Gold border */
+      border-radius: 10px; /* Rounded edges */
+      padding: 10px; /* Inner spacing */
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth hover effect */
+      color: white; /* Default text color */
+      position: relative; /* Necessary for overlay effects (if needed) */
+    }
 
- /* Full-viewport home section with a black background */
- .home {
-  min-height: 100vh;
-  background-color:transparent;
-  padding-top: 80px; /* Clears fixed navbar if you have one */
-}
+    #education .card-header {
+      background-color: transparent; /* No background color */
+      border: none; /* Removes any borders if present */
+      padding: 20px;
+    }
 
-#home .btn {
-  margin-top: 20px; /* Adds space between the buttons and the text above */
-}
+    #education .card:hover {
+      background-color: #1e3a8a;
+      background-blend-mode: overlay; /* Combines hover color with the image */
+      color: #FFD700; /* Makes text readable on yellow background */
+      border-color: #1e3a8a; /* Change border color for contrast */
+      transform: scale(1.05)
+    }
 
-
-/* Wrapper to create a dark circle behind the portrait */
-.portrait-circle {
-  width: 350px;
-  height: 350px;
-  background-color: rgba(0, 0, 0, 0.05); /* Transparent effect */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* The portrait image inside the circle */
-.portrait-img {
-  width: 350px;
-  height: 350px;
-  object-fit: cover; /* Ensures the image covers the circle */
-  border-radius: 50%; /* Makes it circular */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px; /* Space between icons */
-  margin-top: 20px;
-  padding-top: 20px;
-}
-
-.social-icon {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: white;
-  font-size: 24px;
-  transition: transform 0.3s ease;
-  border: 3px solid white; /* Gold border */
-}
-
-.social-icon:hover {
-  background-color: #ffc107; /* Change color on hover */
-  transform: scale(1.1);
-}
-
-@media (max-width: 576px) {
-
-  /* for home */
-  #home {
-    height: auto; /* Prevents content from getting cut off */
-    padding-top: 50px; /* Adjust spacing */
-  }
-
-  #home h1,h2 {
-    font-size: 22px; /* Scales heading for mobile */
-    text-align: center; /* Centers text for better readability */
-  }
-
-  .social-icons {
-    justify-content: center; /* Centers icons */
-  }
-
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-
-  .btn {
-    padding: 8px 16px;
-    font-size: 14px;
-    width: 150px
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Space between buttons */
-  }
-
-  .portrait-circle,
-  .portrait-img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto; /* Centers the image */
-    padding-top: 30px; /* Adds space above the image */
-  }
-
-   /* for about */
-   #about .profile-img {
-    width: 250px;
-    height: 250px;
-    margin-top: -30px;
-    margin-left: 40px;
-    margin-bottom: 20px; /* Adds space below the image */
-  }
-
-   #about .about-text {
-    width: 90%;
-    font-size: 15px; /* Reduce font size */
-    line-height: 1.6; /* Adjust spacing */
-    padding: 15px; /* Reduce padding */
-    margin-left: 20px;
-    margin-top: 10px; /* Adjust spacing above */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  #education .card {
-  width: 100%; /* Makes the cards take up the full width */
-  max-width: 400px; /* Prevents it from getting too big */
-  padding: 15px; /* Adds more space inside the card */
-}
-
-#education .card-header h3 {
-  font-size: 1.4rem; /* Reduces title size */
-}
-
-#education .card-header img {
-  margin-left: -10px;
-  width: 60px; /* Slightly smaller */
-
-}
-
-#skills .skill-icon {
-    left: 0px; /* Moves icon further left */
-  }
-
-  #project .card {
-  max-width: 300px; /* Sets a smaller max width */
-  padding: 15px; /* Adds internal spacing */
-  margin: 15px auto; /* Adds space between cards */
-}
-
-#project .row {
-  gap: 20px; /* Adds space between columns */
-  justify-content: center; /* Centers cards in row */
-}
-
-#project .project-img {
-    width: 100%; /* Ensures the image fills the card */
-    height: 140px; /* Reduces image height */
-  }
-
-  .form-container {
-    width: 90%; /* Keeps form contained */
-    padding: 20px; /* Reduces padding */
-    margin: auto; /* Centers the form */
-  }
-
-  .form-control {
-    font-size: 14px; /* Adjusts input text size for mobile */
-    padding: 8px; /* Makes inputs more compact */
-  }
-
-  .btn-custom {
-    width: 100%; /* Full-width button */
-    padding: 12px; /* Makes button easier to tap */
-  }
-
-}
-
-
-#about {
-  background: url('images/textured_bg.avif') no-repeat center center fixed;
-  background-size: cover;
-  filter: contrast(1.1) brightness(0.9);
-    color: white;
-    padding: 100px 0;
-    border-bottom: 2px solid #ffc107;
-  }
-
-  .profile-img {
-  width: 400px; /* Adjusts the width */
-  height: 400px; /* Adjusts the height */
-  object-fit: cover; /* Ensures the image fits within the specified dimensions */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-  margin-right: 50px
-}
-
-
-.about-text {
-    font-weight: bold;
-    font-size: 22px; /* Adjust font size for readability */
-    line-height: 2.2; /* Improves spacing between lines */
-    color: #FFC107; /* White text for contrast */
-    padding: 20px; /* Adds inner spacing around the text */
-    border-radius: 10px; /* Softens edges of the text block */
-    text-align: justify; /* Justifies text for neat alignment */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow effect */
-    margin-top: 20px; /* Adds spacing above the paragraph */
-    letter-spacing: 1px; /* Adds spacing between letters */
-    border: 1px solid #ffc107; 
-    text-align: center;
-}
-
-#education .card-body {
-  display: block; /* Resets flex styling */
-  align-items: unset; /* Removes vertical alignment */
-}
-
-#education .card-body img {
-  width: 100px; /* Keeps the logo styling consistent */
-  height: 100px;
-  margin-bottom: 20px; /* Adds spacing beneath the logo */
-}
-
-#education .card {
-  background: url('images/navy_bg.avif') no-repeat center center; /* Same background as the section */
-  background-size: cover; /* Ensures the image covers the card */
-  border: 2px solid #ffc107; /* Gold border */
-  border-radius: 10px; /* Rounded edges */
-  padding: 10px; /* Inner spacing */
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth hover effect */
-  color: white; /* Default text color */
-  position: relative; /* Necessary for overlay effects (if needed) */
-}
-
-  #education .card-header {
-  background-color: transparent; /* No background color */
-  border: none; /* Removes any borders if present */
-  padding: 20px;
-}
-
-  #education{
-    background: url('images/navy_bg.avif') no-repeat center center fixed;
-    background-size: cover;
-    padding: 50px;
-    border-bottom: 2px solid #041d31;
-    
-  }
-
-    
-  #education .card:hover {
-    background-color: #1e3a8a;
-  background-blend-mode: overlay; /* Combines hover color with the image */
-  color: #FFD700; /* Makes text readable on yellow background */
-  border-color: #1e3a8a; /* Change border color for contrast */
-  transform: scale(1.05)
-}
-
+    /* Skills */
+    #skills {
+      background: url('images/navy_bg.avif') no-repeat center center; /* Same background as the section */
+      background-size: cover; /* Ensures the image covers the card */
+      padding: 50px 0;
+      border-bottom: 2px solid #ffc107;
+    }
   
-  #skills {
-    background: url('images/navy_bg.avif') no-repeat center center; /* Same background as the section */
-  background-size: cover; /* Ensures the image covers the card */
-    padding: 50px 0;
-    border-bottom: 2px solid #ffc107;
-  }
+    #skills h2 {
+      margin-bottom: 40px; /* Space below "Skills" heading */
+    }
+
+    #skills h3 {
+      margin-top: 40px; /* Space above "Technical Skills" heading */
+      margin-bottom: 50px; /* Space below "Technical Skills" heading */
+      font-size: 24px; /* Match ATOM-IQ font size */
+      font-weight: bold; /* Make text bold */
+      color: #ffc107; /* Yellow color */
+      text-transform: uppercase; /* Capitalize text */
+      letter-spacing: 2px; /* Add spacing */
+      text-align: center; /* Center-align */
+    }
+
+
+    #skills .skill-label {
+      margin-bottom: 1rem; /* Space below each skill label */
+      margin-left:50px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px
+    }
+
+    #skills .progress {
+      margin-top: 20px; /* Adds space above the progress bars */
+      margin-left: 50px; /* Aligns progress bars to the left */
+      width: 80%
+    }
+
+    #skills .progress-bar {
+      background-color: #FFD700;
+      background-image: linear-gradient(to right, #FFD700, #FFA500);
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+      color: black; /* White text color */
+      font-weight: bold;
+      text-align: right; /* Aligns text to the right */
+      padding-right: 10px; /* Avoid overlap */
+      line-height: 25px; /* Vertically centers text */
+      border-radius: 15px;
+      transition: width 0.6s ease;
+      transform: translateY(-2px);
+    }
+
+    .skill-item {
+      display: flex; /* Align icon and progress bar horizontally */
+      align-items: center; /* Center content vertically */
+      position: relative;
+    }
+
+    .skill-icon {
+      width: 45px; /* Icon size */
+      height: 45px;
+      position: absolute; /* Enables movement */
+      left:-10px; /* Moves icon left */
+      margin-right:5px;
+    }
+
+    #skills .progress-bar:hover {
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Glowing effect */
+      transform: scale(1.02); /* Slightly enlarges on hover */
+    }
+
+    #skills .ui-skill .progress-bar { width: 90%; }
+    #skills .ux-skill .progress-bar { width: 85%; }
+    #skills .pr-skill .progress-bar { width: 75%; }
+    #skills .ur-skill .progress-bar { width: 80%; }
+
+    /* Projects */
+    #project {
+      background: url('images/textured_bg.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      padding: 10px 0;
+    }
+
+    #project .container {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .project-img {
+      height: 200px; /* Ensures uniform image height */
+      object-fit: cover; /* Prevents distortion while covering area */
+      border-bottom: 2px solid #FFC107; /* Yellow border below image */
+    }
+
+    #project .card {
+      border: 2px solid #FFC107; /* Yellow border */
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+      transition: 0.3s ease-in-out; /* Smooth transition */
+      padding: 15px; /* Adds internal spacing */
+    }
+
+    #project .card:hover {
+      border: 2px solid #1e3a8a; /* Changes border color on hover */
+      box-shadow: 0 0 15px rgba(30, 58, 138, 0.8); /* Blue glowing effect */
+      transform: scale(1.03);
+    }
+
+    #project .card:hover .project-img {
+      border: 2px solid #1e3a8a; /* Ensures yellow border under image is visible */
+    }
+
+    #project .card-body {
+      background-color: transparent; /* Removes default white background */
+      color: white; /* Ensures text is readable */
+    }
+
+    #project .card-title {
+      font-size: 22px; /* Increase title size */
+      font-weight: bold; /* Make it bold */
+      color: #ffc107; /* Yellow text */
+      text-transform: uppercase; /* Makes text all caps */
+      letter-spacing: 1.5px; /* Adds spacing between letters */
+    }
+
+    #project .card-text {
+      font-size: 16px; /* Larger font for better readability */
+      font-weight: 500; /* Slightly bold text */
+      color: white; /* Ensures contrast against the background */
+      line-height: 1.6; /* Improves spacing */
+    }
+
+    /* Contact */
+    #contact {
+      background: url('images/textured_bg.avif') no-repeat center center fixed;
+      background-size: cover;
+    }
   
-  #skills h2 {
-  margin-bottom: 40px; /* Space below "Skills" heading */
-}
-
-#skills h3 {
-  margin-top: 40px; /* Space above "Technical Skills" heading */
-  margin-bottom: 50px; /* Space below "Technical Skills" heading */
-  font-size: 24px; /* Match ATOM-IQ font size */
-  font-weight: bold; /* Make text bold */
-  color: #ffc107; /* Yellow color */
-  text-transform: uppercase; /* Capitalize text */
-  letter-spacing: 2px; /* Add spacing */
-  text-align: center; /* Center-align */
-}
-
-
-#skills .skill-label {
-  margin-bottom: 1rem; /* Space below each skill label */
-  margin-left:50px
-}
-
-#skills .progress {
-  margin-top: 20px; /* Adds space above the progress bars */
-  margin-left: 50px; /* Aligns progress bars to the left */
-  width: 80%
-}
-
-  /* Progress bar styles */
-  #skills .progress-bar {
-  background-color: #FFD700;
-  background-image: linear-gradient(to right, #FFD700, #FFA500);
-  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
-  color: black; /* White text color */
-  font-weight: bold;
-  text-align: right; /* Aligns text to the right */
-  padding-right: 10px; /* Avoid overlap */
-  line-height: 25px; /* Vertically centers text */
-  border-radius: 15px;
-  transition: width 0.6s ease;
-  transform: translateY(-2px);
-}
-
-.skill-item {
-  display: flex; /* Align icon and progress bar horizontally */
-  align-items: center; /* Center content vertically */
-  position: relative;
-}
-
-.skill-icon {
-  width: 45px; /* Icon size */
-  height: 45px;
-  position: absolute; /* Enables movement */
-  left:-10px; /* Moves icon left */
-  margin-right:5px;
-}
-
-  /* Label color */
-  #skills .skill-label {
-    color: #fff;
-    margin-bottom: .5rem;
-    font-weight: bold;
-    font-size: 20px
-  }
-
-  #skills .progress-bar:hover {
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Glowing effect */
-  transform: scale(1.02); /* Slightly enlarges on hover */
-}
-
-  /* Widths for each progress bar */
-  #skills .ui-skill    .progress-bar { width: 90%; }
-  #skills .ux-skill     .progress-bar { width: 85%; }
-  #skills .pr-skill      .progress-bar { width: 75%; }
-  #skills .ur-skill      .progress-bar { width: 80%; }
-
-#project .container {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-/* Project Section */
-#project {
-  background: url('images/textured_bg.avif') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  padding: 10px 0;
-}
-
-/* Container Margin */
-#project .container {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-/* Image Styling */
-.project-img {
-  height: 200px; /* Ensures uniform image height */
-  object-fit: cover; /* Prevents distortion while covering area */
-  border-bottom: 2px solid #FFC107; /* Yellow border below image */
-}
-
-/* Card Styling */
-#project .card {
-  border: 2px solid #FFC107; /* Yellow border */
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
-  transition: 0.3s ease-in-out; /* Smooth transition */
-  padding: 15px; /* Adds internal spacing */
-}
-
-/* Hover Effect */
-#project .card:hover {
-  border: 2px solid #1e3a8a; /* Changes border color on hover */
-  box-shadow: 0 0 15px rgba(30, 58, 138, 0.8); /* Blue glowing effect */
-  transform: scale(1.03);
-}
-
-#project .card:hover .project-img {
-  border: 2px solid #1e3a8a; /* Ensures yellow border under image is visible */
-}
-
-/* Card Body */
-#project .card-body {
-  background-color: transparent; /* Removes default white background */
-  color: white; /* Ensures text is readable */
-}
-
-#project .card-title {
-  font-size: 22px; /* Increase title size */
-  font-weight: bold; /* Make it bold */
-  color: #ffc107; /* Yellow text */
-  text-transform: uppercase; /* Makes text all caps */
-  letter-spacing: 1.5px; /* Adds spacing between letters */
-}
-
-#project .card-text {
-  font-size: 16px; /* Larger font for better readability */
-  font-weight: 500; /* Slightly bold text */
-  color: white; /* Ensures contrast against the background */
-  line-height: 1.6; /* Improves spacing */
-}
-
-#contact {
-  background: url('images/textured_bg.avif') no-repeat center center fixed;
-  background-size: cover;
-}
-  /* Form Container */
-  .form-container {
-    background: url('images/navy_bg.avif') no-repeat center center fixed;
-    background-size: cover;
+    .form-container {
+      background: url('images/navy_bg.avif') no-repeat center center fixed;
+      background-size: cover;
       padding: 40px; /* Inner spacing around the form */
       border-radius: 10px; /* Rounded corners */
     }
 
-   /* Input Fields */
-.form-control {
-  background-color: transparent; /* Keeps background clean */
-  color: white; /* Light text inside the input */
-  border: 2px solid #1e3a8a; /* Deep blue border */
-  border-radius: 5px; /* Rounded edges for input fields */
+    .form-control {
+      background-color: transparent; /* Keeps background clean */
+      color: white; /* Light text inside the input */
+      border: 2px solid #1e3a8a; /* Deep blue border */
+      border-radius: 5px; /* Rounded edges for input fields */
+    }
+
+    .form-control:focus {
+      background-color: transparent; /* Maintains transparency on focus */
+      color: white; /* Ensures readability */
+      border-color: #FFC107; /* Gold border when focused */
+    }
+
+    .form-label {
+    color: #FFC107; /* White labels for visibility */
+    }
+
+    .form-control::placeholder {
+      color: white; /* Gold placeholder text */
+      opacity: 1; /* Ensures it's fully visible */
+    }
+
+    .btn-custom {
+      background-color: transparent; /* Gold button */
+      color: #ffc107; /* Black text for contrast */
+      border: none; /* Removes borders */
+      padding: 10px 20px; /* Adds space around text */
+      border-radius: 5px; /* Rounded corners */
+      font-weight: bold; /* Bold text for emphasis */
+      border: 2px solid #1e3a8a; /* Deep blue border */
+    }
+
+    .btn-custom:hover {
+      background-color: #1e3a8a; /* Deep blue on hover */
+      color: white; /* White text for contrast */
+    }
+    
+    /* Footer */
+    footer {
+      background: url('images/navy_bg.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      border-bottom: 3px solid #041d31;
+      font-weight:bold;
+      line-height: 0.5;
+    }
+
+@media (max-width: 576px) {
+
+    /* Home */
+    #home {
+      height: auto; /* Prevents content from getting cut off */
+      padding-top: 50px; /* Adjust spacing */
+    }
+
+    #home h1,h2 {
+      font-size: 22px; /* Scales heading for mobile */
+      text-align: center; /* Centers text for better readability */
+    }
+
+    .social-icons {
+      justify-content: center; /* Centers icons */
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 14px;
+      width: 150px
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      justify-content: center;
+      align-items: center;
+      gap: 10px; /* Space between buttons */
+    }
+
+    .portrait-circle, .portrait-img {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto; /* Centers the image */
+      padding-top: 30px; /* Adds space above the image */
+    }
+
+    /* About */
+    #about .profile-img {
+      width: 250px;
+      height: 250px;
+      margin-top: -30px;
+      margin-left: 40px;
+      margin-bottom: 20px; /* Adds space below the image */
+    }
+
+    #about .about-text {
+      width: 90%;
+      font-size: 15px; /* Reduce font size */
+      line-height: 1.6; /* Adjust spacing */
+      padding: 15px; /* Reduce padding */
+      margin-left: 20px;
+      margin-top: 10px; /* Adjust spacing above */
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+
+    #education .card {
+      width: 100%; /* Makes the cards take up the full width */
+      max-width: 400px; /* Prevents it from getting too big */
+      padding: 15px; /* Adds more space inside the card */
+    }
+
+    #education .card-header h3 {
+      font-size: 1.4rem; /* Reduces title size */
+    }
+
+    #education .card-header img {
+      margin-left: -10px;
+      width: 60px; /* Slightly smaller */
+    }
+
+    #skills .skill-icon {
+      left: 0px; /* Moves icon further left */
+    }
+
+    #project .card {
+    max-width: 300px; /* Sets a smaller max width */
+    padding: 15px; /* Adds internal spacing */
+    margin: 15px auto; /* Adds space between cards */
+    }
+
+    #project .row {
+      gap: 20px; /* Adds space between columns */
+      justify-content: center; /* Centers cards in row */
+    }
+
+    #project .project-img {
+      width: 100%; /* Ensures the image fills the card */
+      height: 140px; /* Reduces image height */
+    }
+
+    .form-container {
+      width: 90%; /* Keeps form contained */
+      padding: 20px; /* Reduces padding */
+      margin: auto; /* Centers the form */
+    }
+
+    .form-control {
+      font-size: 14px; /* Adjusts input text size for mobile */
+      padding: 8px; /* Makes inputs more compact */
+    }
+
+    .btn-custom {
+      width: 100%; /* Full-width button */
+      padding: 12px; /* Makes button easier to tap */
+    }
 }
-
-/* Focus Styling for Inputs */
-.form-control:focus {
-  background-color: transparent; /* Maintains transparency on focus */
-  color: white; /* Ensures readability */
-  border-color: #FFC107; /* Gold border when focused */
-}
-
-/* Labels */
-.form-label {
-  color: #FFC107; /* White labels for visibility */
-}
-
-.form-control::placeholder {
-  color: white; /* Gold placeholder text */
-  opacity: 1; /* Ensures it's fully visible */
-}
-
-/* Submit Button */
-.btn-custom {
-  background-color: transparent; /* Gold button */
-  color: #ffc107; /* Black text for contrast */
-  border: none; /* Removes borders */
-  padding: 10px 20px; /* Adds space around text */
-  border-radius: 5px; /* Rounded corners */
-  font-weight: bold; /* Bold text for emphasis */
-  border: 2px solid #1e3a8a; /* Deep blue border */
-}
-
-/* Hover Effect for Button */
-.btn-custom:hover {
-  background-color: #1e3a8a; /* Deep blue on hover */
-  color: white; /* White text for contrast */
-}
-
-footer {
-  background: url('images/navy_bg.avif') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  border-bottom: 3px solid #041d31;
-  font-weight:bold;
-  line-height: 0.5;
-}
-
-
-
-    </style>
+  </style>
 
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbarSupportedContent" data-bs-offset="50">
@@ -567,126 +537,114 @@ footer {
     </nav>
 
     <!-- Home Section -->
-<section id="home" class="home d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
+  <section id="home" class="home d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
       <!-- LEFT COLUMN: Text + Buttons -->
-      <div class="col-md-6 text-white text-start">
-        <h1 class="display-4 fw-bold mb-3">
-          <span class="text-warning">Hey!</span><br>
-          I am <span class="text-warning">Denmark.</span><br>
-        </h1>
-        <h2 class="mb-3">This is where <span class="text-warning">creativity meets code.</span></h2>
-
-         <!-- Social Media Icons -->
-         <div class="social-icons mt-4">
+        <div class="col-md-6 text-white text-start">
+          <h1 class="display-4 fw-bold mb-3">
+            <span class="text-warning">Hey!</span><br>
+            I am <span class="text-warning">Denmark.</span><br>
+          </h1>
+          <h2 class="mb-3">This is where <span class="text-warning">creativity meets code.</span></h2>
+          <!-- Social Media Icons -->
+          <div class="social-icons mt-4">
           <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
           <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
           <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
           <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
         </div>
         <!-- Buttons with Bootstrap Icons -->
-        <a href="#about" class="btn btn-outline-light px-4 py-2 me-3 fw-bold">Know Me</a>
-        <a href="#contact" class="btn btn-outline-light px-4 py-2 fw-bold">Message</a>
-      </div>
-      <!-- RIGHT COLUMN: Image -->
-      <div class="col-md-6 text-center">
-        <div class="portrait-circle mx-auto">
-          <img src="images/prof.png" alt="Portrait" class="portrait-img">
+          <a href="#about" class="btn btn-outline-light px-4 py-2 me-3 fw-bold">Know Me</a>
+          <a href="#contact" class="btn btn-outline-light px-4 py-2 fw-bold">Message</a>
+          </div>
+        <!-- RIGHT COLUMN: Image -->
+          <div class="col-md-6 text-center">
+            <div class="portrait-circle mx-auto">
+            <img src="images/prof.png" alt="Portrait" class="portrait-img">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    
-
-
-    <section id="about">
+    <!-- About Section -->
+  <section id="about">
       <div class="container">
         <div class="row align-items-center">
           <!-- Profile Image -->
           <div class="col-md-4 text-center">
             <img src="images/pic3.jpg" alt="Profile Picture" class="profile-img">
           </div>
-    
           <!-- About Text -->
           <div class="col-md-8 about-text">
             <h1 class="fw-bold mb-3">ABOUT ME</h1>
             <p class="mt-3 about-text">
               I am a second-year student at NU Lipa, pursuing a Bachelor of Science in Information Technology. As I navigate this career, my love for web design continuously grows. I also have this passion for analyzing data and digits, believing that numbers do not lie. I am someone who always thrives for excellence through perseverance and commitment in everything I choose to do. 
-          </p>
-        </div>
-        
+            </p>
+          </div>
         </div>
       </div>
-    </section>
+  </section>
       
+    <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <h1 class="text-center fw-bold mb-5">EDUCATION</h1>
+        <div class="row">          
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+          <img src="images/elem_logo.png" alt="Primary School Logo" style="height: 70px; margin-right: 15px;">
+          <h3 class="mb-0 fw-bold">Elementary</h3>
+    </div>
+      <div class="card-body">
+          <p class="fw-bold">Galamay-Amo Elementary School</p>
+          <p>2011 - 2017</p>
+          <p>Batch Salutatorian</p>
+          <p class="fw-bold">Regional Representative, Mathematics</p>
+        </div>
+      </div>
+    </div>
 
-      <section id="education">
-        <div class="container">
-          <h1 class="text-center fw-bold mb-5">EDUCATION</h1>
-          <div class="row">
-            <!-- Primary Education -->
-<div class="col-md-4 mb-4">
-  <div class="card">
-    <div class="card-header d-flex align-items-center">
-      <img src="images/elem_logo.png" alt="Primary School Logo" style="height: 70px; margin-right: 15px;">
-      <h3 class="mb-0 fw-bold">Elementary</h3>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+          <img src="images/hs_logo.png" alt="Secondary School Logo" style="height: 70px; margin-right: 15px;">
+          <h3 class="mb-0 fw-bold">High School</h3>
     </div>
-    <div class="card-body">
-      <p class="fw-bold">Galamay-Amo Elementary School</p>
-      <p>2011 - 2017</p>
-      <p>Batch Salutatorian</p>
-      <p class="fw-bold">Regional Representative, Mathematics</p>
+      <div class="card-body">
+          <p class="fw-bold">St. Paul School of San Jose Batangas Inc.</p>
+          <p>2017 - 2023</p>
+          <p>Batch Salutatorian, DOST Awardee</p>
+          <p class="fw-bold">International Representative, Mathematics</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- Secondary Education -->
-<div class="col-md-4 mb-4">
-  <div class="card">
-    <div class="card-header d-flex align-items-center">
-      <img src="images/hs_logo.png" alt="Secondary School Logo" style="height: 70px; margin-right: 15px;">
-      <h3 class="mb-0 fw-bold">High School</h3>
+    <div class="col-md-4 mb-4">
+      <div div class="card">
+        <div class="card-header d-flex align-items-center">
+          <img src="images/nu_logo1.png" alt="College School Logo" style="height: 70px; margin-right: 15px;">
+          <h3 class="mb-0 fw-bold">College</h3>
     </div>
-    <div class="card-body">
-      <p class="fw-bold">St. Paul School of San Jose Batangas Inc.</p>
-      <p>2017 - 2023</p>
-      <p>Batch Salutatorian, DOST Awardee</p>
-      <p class="fw-bold">International Representative, Mathematics</p>
+      <div class="card-body">
+        <p class="fw-bold">NU Lipa</p>
+        <p>2023 - Present</p>
+        <p>Bachelor of Science in Information Technology</p>
+        <p class="fw-bold">Dean's Lister</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- College Education -->
-<div class="col-md-4 mb-4">
-  <div class="card">
-    <div class="card-header d-flex align-items-center">
-      <img src="images/nu_logo1.png" alt="College School Logo" style="height: 70px; margin-right: 15px;">
-      <h3 class="mb-0 fw-bold">College</h3>
-    </div>
-    <div class="card-body">
-      <p class="fw-bold">NU Lipa</p>
-      <p>2023 - Present</p>
-      <p>Bachelor of Science in Information Technology</p>
-      <p class="fw-bold">Dean's Lister</p>
-    </div>
-  </div>
-</div>
-      </section>
-
-
-      <!-- Place this where you want the Skills section -->
 <!-- Skills Section -->
-<section id="skills">
-  <div class="container">
-
-    <div class="row">
+  <section id="skills">
+    <div class="container">
+      <div class="row">
       <!-- Left Column for Soft Skills -->
       <div class="col-md-6">
         <h3 class="text-center">SOFT SKILLS</h3>
-
         <!-- Problem-Solving -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/ps.png" alt="Problem-Solving Icon" class="skill-icon me-3">
@@ -697,7 +655,6 @@ footer {
             </div>
           </div>
         </div>
-
         <!-- Time-Management -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/tm.png" alt="Time-Management Icon" class="skill-icon me-3">
@@ -708,7 +665,6 @@ footer {
             </div>
           </div>
         </div>
-
         <!-- Team Collaboration -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/tc.png" alt="Team Collaboration Icon" class="skill-icon me-3">
@@ -719,7 +675,6 @@ footer {
             </div>
           </div>
         </div>
-
         <!-- Adaptability -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/adapt.png" alt="Adaptability Icon" class="skill-icon me-3">
@@ -731,11 +686,9 @@ footer {
           </div>
         </div>
       </div>
-
       <!-- Right Column for Hard Skills -->
       <div class="col-md-6">
         <h3 class="text-center">HARD SKILLS</h3>
-
         <!-- HTML -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/html.webp" alt="HTML Icon" class="skill-icon me-3">
@@ -746,7 +699,6 @@ footer {
             </div>
           </div>
         </div>
-
         <!-- CSS -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/css.webp" alt="CSS Icon" class="skill-icon me-3">
@@ -757,7 +709,6 @@ footer {
             </div>
           </div>
         </div>
-
         <!-- JavaScript -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/js.png" alt="JavaScript Icon" class="skill-icon me-3">
@@ -768,7 +719,6 @@ footer {
             </div>
           </div>
         </div>
-
         <!-- Bootstrap -->
         <div class="mb-4 skill-item d-flex align-items-center">
           <img src="images/bs1.png" alt="Bootstrap Icon" class="skill-icon me-3">
@@ -782,13 +732,12 @@ footer {
       </div>
     </div>
   </div>
-</section>
+  </section>
 
-
-<!-- Skills Section -->
-<section id="project">
-  <div class="container"> <!-- Centering and spacing -->
-    <h1 class="text-white text-center fw-bold mb-5">MY PROJECTS</h1>
+<!-- Project Section -->
+  <section id="project">
+    <div class="container"> <!-- Centering and spacing -->
+      <h1 class="text-white text-center fw-bold mb-5">MY PROJECTS</h1>
     <div class="row"> <!-- Bootstrap row for alignment -->
       <!-- Card 1 -->
       <div class="col-md-4"> 
@@ -819,17 +768,14 @@ footer {
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Henyo Sports</h5>
             <p class="card-text flex-grow-1">A quiz app focused on sports trivia to test and enhance knowledge.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-
-<section id="contact">
+  <section id="contact">
   <div class="container py-5">
       <h1 class="text-center text-white fw-bold mb-5">CONTACT ME</h1>
       <div class="row justify-content-center">
@@ -877,12 +823,11 @@ footer {
           </div>
       </div>
   </div>
-</section>
+  </section>
 
   <footer class="text-center text-white py-4">
     <i> © Denmark Isana Guce | All Rights Reserved</i>
   </footer>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
